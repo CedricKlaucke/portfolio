@@ -1,0 +1,30 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* scrollbars */
+  /* firefox */
+  * {
+    /* scrollbar-color: lightgray white; */
+    scrollbar-width: none;
+  }
+
+  /* other browsers */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /*
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: white;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: lightgray;
+  }
+  */
