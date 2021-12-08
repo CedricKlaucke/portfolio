@@ -24,7 +24,7 @@ export default function Home() {
       }
     },
     show: {
-      height: 132,
+      height: 134,
       opacity: 1,
       transition: {
         duration: 0.75,
@@ -46,7 +46,7 @@ export default function Home() {
       <Head>
         <title>Cedric Klaucke</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <header className="fixed flex flex-row w-full h-16 top-0 left-0 items-center justify-between border-b shadow-md z-20 text-black-0 bg-white dark:text-white dark:bg-black-200 dark:border-black-300">
@@ -178,7 +178,7 @@ export default function Home() {
               </li>
 
               <li> {/* 2nd top item */}
-              <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
                   <span className="inline-flex justify-center items-center ml-4">
                     <svg
                       className="w-5 h-5"
@@ -200,7 +200,7 @@ export default function Home() {
               </li>
 
               <li> {/* 3rd top item */}
-              <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
                   <span className="inline-flex justify-center items-center ml-4">
                     <svg
                       className="w-5 h-5"
@@ -227,10 +227,7 @@ export default function Home() {
                     <div className="flex flex-col w-5 h-5 justify-center items-center">
                       <motion.div
                         className="fixed w-5 h-1 rounded-lg bg-black-0 dark:bg-white"
-                        animate={{
-                          rotate: sideCollapse ? 0 : 90,
-                          opacity: sideCollapse ? 0 : 1
-                        }}
+                        animate={{ rotate: sideCollapse ? 0 : 90 }}
                       />
                       <motion.div
                         className="fixed w-5 h-1 rounded-lg bg-black-0 dark:bg-white"
@@ -354,7 +351,7 @@ export default function Home() {
               <li> {/* 1st bottom item */}
                 <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
                   <span className="inline-flex justify-center items-center ml-4">
-                  <svg
+                    <svg
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="far"
@@ -378,7 +375,7 @@ export default function Home() {
                 <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
                   <span className="inline-flex justify-center items-center ml-4">
                     {/* <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-in-alt" class="svg-inline--fa fa-sign-in-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z"></path></svg> */}
-                    
+
                     <svg
                       aria-hidden="true"
                       focusable="false"
@@ -407,9 +404,9 @@ export default function Home() {
       {/* main content */}
       <main className="flex flex-col w-full h-full space-y-4 mt-16 items-center">
         {/* 1st container */}
-        <div className="flex flex-row w-11/12 h-96 border rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
-          <div className="flex flex-col w-full border-r dark:border-black-300">
-            <div className="flex w-full border-b h-16 items-center justify-center dark:border-black-300">
+        <div className="flex flex-col md:flex-row w-11/12 h-96 border-2 rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
+          <div className="flex flex-col w-full md:border-r-2 border-b-2 border-r-0 md:border-b-0 dark:border-black-300">
+            <div className="flex w-full border-b-2 h-16 items-center justify-center dark:border-black-300">
               <span>top text</span>
             </div>
             <div className="flex h-full items-center justify-center">
@@ -418,14 +415,12 @@ export default function Home() {
           </div>
           <div className="relative flex h-96">
             <Image
-              src="/img/computer.jpeg"
-              alt="foto"
-              layout="fixed"
-              objectFit="cover"
-              objectPosition="center"
-              priority={false}
+              layout="responsive"
+              height={382}
               width={682}
-              height={384}
+              src="/img/computer.jpeg"
+              alt="ja"
+              title="jemoeder"
             />
           </div>
         </div>
@@ -434,7 +429,7 @@ export default function Home() {
         <div className="flex flex-row w-11/12 h-96 border rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
           <div className="relative flex h-96">
             <Image
-              src="/img/skate.jpg"
+              src="/img/festival.jpg"
               alt="foto"
               layout="fixed"
               objectFit="cover"
@@ -445,7 +440,7 @@ export default function Home() {
             />
           </div>
           <div className="flex flex-col w-full border-l dark:border-black-300">
-          <div className="flex w-full border-b h-16 items-center justify-center dark:border-black-300">
+            <div className="flex w-full border-b h-16 items-center justify-center dark:border-black-300">
               <span>top text</span>
             </div>
             <div className="flex h-full items-center justify-center">
