@@ -1,4 +1,4 @@
-import useDarkMode from "./useDarkMode"
+import useDarkMode from "./hooks/useDarkMode"
 import Head from "next/head"
 import { useState } from "react"
 import Image from "next/image"
