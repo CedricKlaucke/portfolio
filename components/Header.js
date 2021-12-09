@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useCycle } from "framer-motion";
-import useDarkMode from "../hooks/useDarkMode";
+import useDarkMode from "../pages/hooks/useDarkMode";
 
 export const Header = ({
   setSideCollapse,
