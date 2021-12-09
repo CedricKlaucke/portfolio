@@ -1,8 +1,9 @@
-import useDarkMode from "./useDarkMode"
-import Head from "next/head"
-import { useState } from "react"
-import Image from "next/image"
-import { AnimatePresence, motion, useCycle } from "framer-motion"
+import useDarkMode from "./hooks/useDarkMode";
+import Head from "next/head";
+import { useState } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
+import useMediaQuery from "./hooks/useMediaQuery";
 
 export default function Home() {
   {/* sidebar nav toggle */ }
@@ -40,6 +41,9 @@ export default function Home() {
 
   {/* tailwind darkmode */ }
   const [colorTheme, setTheme] = useDarkMode()
+
+  {/* mediaquery */ }
+  const isDesktop = useMediaQuery("(min-width: 768px)")
 
   return (
     <div className="flex flex-col min-h-screen py-2 items-center text-black-0 bg-white dark:text-white dark:bg-black-100">
@@ -141,19 +145,13 @@ export default function Home() {
         {toggleNav && (
           <motion.aside
             className="fixed flex flex-col w-64 h-full top-0 left-0 border-r shadow-md z-10 text-black-0 bg-white dark:text-white dark:bg-black-200 dark:border-black-300"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, x: -256 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, x: -256 }}
           >
             {/* top list */}
-            <motion.ul
-              className="flex flex-col py-4 space-y-1 mt-16"
-              initial={{ x: -100 }}
-              animate={{ x: 0 }}
-              transition={{ duration: 0.5 }}
-              exit={{ x: -100 }}
-            >
+            <ul className="flex flex-col py-4 space-y-1 mt-16">
               <li> {/* 1st top item */}
                 <a href="/" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
                   <span className="inline-flex justify-center items-center ml-4">
@@ -338,16 +336,10 @@ export default function Home() {
                   <span className="ml-2 text-sm tracking-wide truncate">Contact</span>
                 </a>
               </li>
-            </motion.ul>
+            </ul>
 
             {/* bottom list */}
-            <motion.ul
-              className="absolute overflow-hidden flex flex-col bottom-0 left-0 py-4 space-y-1 w-full border-t bg-white dark:bg-black-200 dark:border-black-300"
-              initial={{ y: 100 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.5 }}
-              exit={{ y: 100 }}
-            >
+            <ul className="absolute overflow-hidden flex flex-col bottom-0 left-0 py-4 space-y-1 w-full border-t bg-white dark:bg-black-200 dark:border-black-300">
               <li> {/* 1st bottom item */}
                 <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
                   <span className="inline-flex justify-center items-center ml-4">
@@ -395,83 +387,163 @@ export default function Home() {
                   <span className="ml-2 text-sm tracking-wide truncate">Logout</span>
                 </a>
               </li>
-            </motion.ul>
+            </ul>
           </motion.aside>
         )}
       </AnimatePresence>
       {/* end side navbar */}
 
       {/* main content */}
-      <main className="flex flex-col w-full h-full space-y-4 mt-16 items-center">
+      <main className="flex flex-col w-full h-full space-y-6 mt-16 items-center">
         {/* 1st container */}
-        <div className="flex flex-col md:flex-row w-11/12 h-96 border-2 rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
-          <div className="flex flex-col w-full md:border-r-2 border-b-2 border-r-0 md:border-b-0 dark:border-black-300">
-            <div className="flex w-full border-b-2 h-16 items-center justify-center dark:border-black-300">
-              <span>top text</span>
+        {isDesktop ?
+          /* desktop */
+          <div className="flex flex-col md:flex-row w-11/12 md:h-96 border-2 rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
+            <div className="flex flex-col w-full md:border-l-2 border-b-2 border-r-0 md:border-b-0 dark:border-black-300">
+              <div className="flex w-full border-b-2 h-16 items-center justify-center dark:border-black-300">
+                <span className="font-bold text-xl">Gamen</span>
+              </div>
+              <div className="flex h-full items-center justify-center">
+                <span>main text</span>
+              </div>
             </div>
-            <div className="flex h-full items-center justify-center">
-              <span>main text</span>
+            <div className="image relative flex">
+              <Image
+                src="/img/computer.jpeg"
+                alt="foto"
+                layout="fixed"
+                objectFit="cover"
+                objectPosition="center"
+                priority={false}
+                width={682}
+                height={384}
+              />
+            </div>
+          </div> :
+          /* mobile */
+          <div className="flex flex-col md:flex-row w-11/12 md:h-96 border-2 rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
+            <div className="flex flex-col w-full md:border-r-2 border-b-2 border-r-0 md:border-b-0 dark:border-black-300">
+              <div className="flex w-full border-b-2 h-16 items-center justify-center dark:border-black-300">
+                <span className="font-bold text-xl">Gamen</span>
+              </div>
+              <div className="flex h-full items-center justify-center">
+                <span>main text</span>
+              </div>
+            </div>
+            <div className="image relative flex">
+              <Image
+                src="/img/computer.jpeg"
+                alt="foto"
+                layout="fixed"
+                objectFit="cover"
+                objectPosition="center"
+                priority={false}
+                width={500}
+                height={200}
+              />
             </div>
           </div>
-          <div className="relative flex h-96">
-            <Image
-              layout="responsive"
-              height={382}
-              width={682}
-              src="/img/computer.jpeg"
-              alt="ja"
-              title="jemoeder"
-            />
-          </div>
-        </div>
+        }
 
         {/* 2nd container */}
-        <div className="flex flex-row w-11/12 h-96 border rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
-          <div className="relative flex h-96">
-            <Image
-              src="/img/festival.jpg"
-              alt="foto"
-              layout="fixed"
-              objectFit="cover"
-              objectPosition="center"
-              priority={false}
-              width={682}
-              height={384}
-            />
-          </div>
-          <div className="flex flex-col w-full border-l dark:border-black-300">
-            <div className="flex w-full border-b h-16 items-center justify-center dark:border-black-300">
-              <span>top text</span>
+        {isDesktop ?
+          /* desktop */
+          <div className="flex flex-col md:flex-row w-11/12 md:h-96 border-2 rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
+            <div className="image relative flex">
+              <Image
+                src="/img/festival.jpg"
+                alt="foto"
+                layout="fixed"
+                objectFit="cover"
+                objectPosition="center"
+                priority={false}
+                width={682}
+                height={384}
+              />
             </div>
-            <div className="flex h-full items-center justify-center">
-              <span>main text</span>
+            <div className="flex flex-col w-full md:border-l-2 border-b-2 border-r-0 md:border-b-0 dark:border-black-300">
+              <div className="flex w-full border-b-2 h-16 items-center justify-center dark:border-black-300">
+                <span className="font-bold text-xl">Festivals</span>
+              </div>
+              <div className="flex h-full items-center justify-center">
+                <span>main text</span>
+              </div>
+            </div>
+          </div> :
+          /* mobile */
+          <div className="flex flex-col md:flex-row w-11/12 md:h-96 border-2 rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
+            <div className="flex flex-col w-full md:border-r-2 border-b-2 border-r-0 md:border-b-0 dark:border-black-300">
+              <div className="flex w-full border-b-2 h-16 items-center justify-center dark:border-black-300">
+                <span className="font-bold text-xl">Festivals</span>
+              </div>
+              <div className="flex h-full items-center justify-center">
+                <span>main text</span>
+              </div>
+            </div>
+            <div className="image relative flex">
+              <Image
+                src="/img/festival.jpg"
+                alt="foto"
+                layout="fixed"
+                objectFit="cover"
+                objectPosition="center"
+                priority={false}
+                width={500}
+                height={200}
+              />
             </div>
           </div>
-        </div>
+        }
 
         {/* 3rd container */}
-        <div className="flex flex-row w-11/12 h-96 border rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
-          <div className="flex flex-col w-full border-r dark:border-black-300">
-            <div className="flex w-full border-b h-16 items-center justify-center dark:border-black-300">
-              <span>top text</span>
+        {isDesktop ?
+          /* desktop */
+          <div className="flex flex-col md:flex-row w-11/12 md:h-96 border-2 rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
+            <div className="flex flex-col w-full md:border-l-2 border-b-2 border-r-0 md:border-b-0 dark:border-black-300">
+              <div className="flex w-full border-b-2 h-16 items-center justify-center dark:border-black-300">
+                <span className="font-bold text-xl">Boulderen</span>
+              </div>
+              <div className="flex h-full items-center justify-center">
+                <span>main text</span>
+              </div>
             </div>
-            <div className="flex h-full items-center justify-center">
-              <span>main text</span>
+            <div className="image relative flex">
+              <Image
+                src="/img/boulder.png"
+                alt="foto"
+                layout="fixed"
+                objectFit="cover"
+                objectPosition="center"
+                priority={false}
+                width={682}
+                height={384}
+              />
+            </div>
+          </div> :
+          /* mobile */
+          <div className="flex flex-col md:flex-row w-11/12 md:h-96 border-2 rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
+            <div className="flex flex-col w-full md:border-r-2 border-b-2 border-r-0 md:border-b-0 dark:border-black-300">
+              <div className="flex w-full border-b-2 h-16 items-center justify-center dark:border-black-300">
+                <span className="font-bold text-xl">Boulderen</span>
+              </div>
+              <div className="flex h-full items-center justify-center">
+                <span>main text</span>
+              </div>
+            </div>
+            <div className="image relative flex">
+              <Image
+                src="/img/boulder.png"
+                alt="foto"
+                layout="fixed"
+                objectFit="cover"
+                objectPosition="center"
+                priority={false}
+                width={500}
+                height={200}
+              />
             </div>
           </div>
-          <div className="relative flex h-96">
-            <Image
-              src="/img/boulder.png"
-              alt="foto"
-              layout="fixed"
-              objectFit="cover"
-              objectPosition="center"
-              priority={false}
-              width={682}
-              height={384}
-            />
-          </div>
-        </div>
+        }
       </main>
       {/* end main content */}
     </div>
