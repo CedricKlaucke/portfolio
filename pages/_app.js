@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useCycle } from 'framer-motion';
 import { Header } from './../components/Header';
 import { SideNav } from './../components/SideNav';
+import { Footer } from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
   {/* sidebar nav toggle */ }
@@ -10,9 +11,8 @@ function MyApp({ Component, pageProps }) {
 
   {/* sidebar collapse */ }
   const [sideCollapse, setSideCollapse] = useState(false);
-
   const [sideRotate, setSideRotate] = useState();
-  
+
   return <>
     <Header
       setSideCollapse={setSideCollapse}
@@ -29,8 +29,10 @@ function MyApp({ Component, pageProps }) {
       sideRotate={sideRotate}
       toggleNav={toggleNav}
     />
-    
+
     <Component {...pageProps} />
+
+    <Footer />
   </>
 }
 

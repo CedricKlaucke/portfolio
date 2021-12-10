@@ -14,7 +14,7 @@ export default function Home() {
   const isPhone = useMediaQuery("(max-width: 768px)");
 
   return (
-    <div className="flex flex-col min-h-screen py-2 items-center text-black-0 bg-white dark:text-white dark:bg-black-100">
+    <div className="flex flex-col min-h-screen py-2 -mb-10 items-center text-black-0 bg-white dark:text-white dark:bg-black-100">
       <Head>
         <title>Cedric Klaucke</title>
         <link rel="icon" href="/favicon.ico" />
@@ -22,7 +22,7 @@ export default function Home() {
       </Head>
 
       {/* main content */}
-      <main className="flex flex-col w-full h-full max-w-screen-xl space-y-6 mt-20 items-center">
+      <main className="flex flex-col w-full h-full max-w-screen-xl mb-10 space-y-6 mt-20 items-center">
         {/* 1st container */}
         {isDesktop && (
           <div className="flex flex-col md:flex-row w-full md:h-96 border-2 rounded-2xl overflow-hidden dark:bg-black-100 dark:border-black-300">
@@ -220,7 +220,6 @@ export default function Home() {
           </div>
         )}
       </main>
-      {/* end main content */}
     </div>
   )
 }

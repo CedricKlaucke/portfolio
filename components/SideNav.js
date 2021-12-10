@@ -9,7 +9,7 @@ export const SideNav = ({
   sideRotate,
   toggleNav
 }) => {
-  
+
   return (
     <AnimatePresence>
       {toggleNav && (
@@ -91,7 +91,13 @@ export const SideNav = ({
               </li>
 
               <li> {/* 4th top item */}
-                <a onClick={function () { setSideCollapse(!sideCollapse); setSideRotate(!sideRotate) }} className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 hover:cursor-pointer focus:outline-none dark:hover:bg-black-300">
+                <a
+                  onClick={function () {
+                    setSideCollapse(!sideCollapse);
+                    setSideRotate(!sideRotate)
+                  }}
+                  className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 hover:cursor-pointer focus:outline-none dark:hover:bg-black-300"
+                >
                   <span className="inline-flex justify-center items-center ml-4">
                     <div className="flex flex-col w-5 h-5 justify-center items-center">
                       <motion.div
@@ -262,7 +268,14 @@ export const SideNav = ({
           </motion.aside>
 
           {/* close menu on outside click */}
-          <span onClick={function () { setToggleNav(!toggleNav); setSideCollapse(false); setSideRotate(false) }} className="z-10 w-full h-screen bg-transparent fixed" />
+          <span
+            onClick={function () {
+              setToggleNav(!toggleNav);
+              setSideCollapse(false);
+              setSideRotate(false)
+            }}
+            className="z-10 w-full h-screen bg-transparent fixed"
+          />
         </>
       )}
     </AnimatePresence>
