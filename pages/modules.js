@@ -2,7 +2,7 @@ import Head from "next/head"
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center -mb-10 min-h-screen py-2 text-black bg-white dark:text-white dark:bg-black-100">
+    <div className="flex flex-col items-center min-h-screen py-2 -mb-10 text-black bg-white dark:text-white dark:bg-black-100">
       <Head>
         <title>Cedric Klaucke</title>
         <link rel="icon" href="/favicon.ico" />
@@ -10,82 +10,82 @@ export default function Home() {
       </Head>
 
       {/* main content */}
-      <main className="flex flex-col space-y-4 mt-16 mb-10 w-full h-full items-center">
+      <main className="flex flex-col items-center w-full h-full mt-16 mb-10 space-y-4">
         {/* top bar */}
-        <div className="flex w-11/12 h-16 border rounded-xl justify-center">
+        <div className="flex justify-center w-11/12 h-16 border rounded-xl">
           <div className="flex w-full">
-            <a href="#" className="flex w-1/12 h-16 items-center justify-center border-r">
+            <a href="#" className="flex items-center justify-center w-1/12 h-16 border-r">
               <span>01</span>
             </a>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>02</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>03</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>04</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>05</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>06</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>07</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>08</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>09</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>10</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>11</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center">
+            <div className="flex items-center justify-center w-1/12">
               <span>12</span>
             </div>
           </div>
           <div className="flex w-full">
-            <a href="#" className="flex w-1/12 h-16 items-center justify-center border-r">
+            <a href="#" className="flex items-center justify-center w-1/12 h-16 border-r">
               <span>01</span>
             </a>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>02</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>03</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>04</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>05</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>06</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>07</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>08</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>09</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>10</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center border-r">
+            <div className="flex items-center justify-center w-1/12 border-r">
               <span>11</span>
             </div>
-            <div className="flex w-1/12 items-center justify-center">
+            <div className="flex items-center justify-center w-1/12">
               <span>12</span>
             </div>
           </div>

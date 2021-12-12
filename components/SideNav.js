@@ -15,17 +15,17 @@ export const SideNav = ({
       {toggleNav && (
         <>
           <motion.aside
-            className="fixed flex flex-col w-64 h-full top-0 left-0 border-r shadow-md z-20 text-black-0 bg-white dark:text-white dark:bg-black-200 dark:border-black-300"
+            className="fixed top-0 left-0 z-20 flex flex-col w-64 h-full bg-white border-r shadow-md text-black-0 dark:text-white dark:bg-black-200 dark:border-black-300"
             initial={{ opacity: 0, x: -256 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             exit={{ opacity: 0, x: -256 }}
           >
             {/* top list */}
-            <ul className="flex flex-col py-4 space-y-1 mt-16">
+            <ul className="flex flex-col py-4 mt-16 space-y-1">
               <li> {/* 1st top item */}
-                <a href="/" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
-                  <span className="inline-flex justify-center items-center ml-4">
+                <a href="/" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                  <span className="inline-flex items-center justify-center ml-4">
                     <svg
                       aria-hidden="true"
                       focusable="false"
@@ -47,8 +47,8 @@ export const SideNav = ({
               </li>
 
               <li> {/* 2nd top item */}
-                <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
-                  <span className="inline-flex justify-center items-center ml-4">
+                <a href="#" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                  <span className="inline-flex items-center justify-center ml-4">
                     <svg
                       className="w-5 h-5"
                       fill="none"
@@ -69,8 +69,8 @@ export const SideNav = ({
               </li>
 
               <li> {/* 3rd top item */}
-                <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
-                  <span className="inline-flex justify-center items-center ml-4">
+                <a href="#" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                  <span className="inline-flex items-center justify-center ml-4">
                     <svg
                       className="w-5 h-5"
                       fill="none"
@@ -96,10 +96,10 @@ export const SideNav = ({
                     setSideCollapse(!sideCollapse);
                     setSideRotate(!sideRotate)
                   }}
-                  className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 hover:cursor-pointer focus:outline-none dark:hover:bg-black-300"
+                  className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 hover:cursor-pointer focus:outline-none dark:hover:bg-black-300"
                 >
-                  <span className="inline-flex justify-center items-center ml-4">
-                    <div className="flex flex-col w-5 h-5 justify-center items-center">
+                  <span className="inline-flex items-center justify-center ml-4">
+                    <div className="flex flex-col items-center justify-center w-5 h-5">
                       <motion.div
                         className="fixed w-5 h-1 rounded-lg bg-black-0 dark:bg-white"
                         animate={{ rotate: sideCollapse ? 0 : 90 }}
@@ -117,15 +117,15 @@ export const SideNav = ({
               <AnimatePresence> {/* 4th top item content */}
                 {sideCollapse && (
                   <motion.ul
-                    className="overflow-hidden border-t border-b bg-gray-100 dark:bg-black-100 dark:border-black-300"
+                    className="overflow-hidden bg-gray-100 border-t border-b dark:bg-black-100 dark:border-black-300"
                     variants={container}
                     initial="hidden"
                     animate="show"
                     exit="hidden"
                   >
                     <motion.li variants={item}> {/* 1st collapse item */}
-                      <a href="/modules" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
-                        <span className="inline-flex justify-center items-center ml-6">
+                      <a href="/modules" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                        <span className="inline-flex items-center justify-center ml-6">
                           <svg
                             className="w-5 h-5"
                             fill="none"
@@ -146,8 +146,8 @@ export const SideNav = ({
                     </motion.li>
 
                     <motion.li variants={item}> {/* 2nd collapse item */}
-                      <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
-                        <span className="inline-flex justify-center items-center ml-6">
+                      <a href="#" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                        <span className="inline-flex items-center justify-center ml-6">
                           <svg
                             className="w-5 h-5"
                             fill="none"
@@ -168,8 +168,8 @@ export const SideNav = ({
                     </motion.li>
 
                     <motion.li variants={item}> {/* 3rd collapse item */}
-                      <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
-                        <span className="inline-flex justify-center items-center ml-6">
+                      <a href="#" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                        <span className="inline-flex items-center justify-center ml-6">
                           <svg
                             className="w-5 h-5"
                             fill="none"
@@ -193,8 +193,8 @@ export const SideNav = ({
               </AnimatePresence>
 
               <li> {/* 5th top item */}
-                <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
-                  <span className="inline-flex justify-center items-center ml-4">
+                <a href="#" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                  <span className="inline-flex items-center justify-center ml-4">
                     <svg
                       className="w-5 h-5"
                       fill="none"
@@ -216,10 +216,10 @@ export const SideNav = ({
             </ul>
 
             {/* bottom list */}
-            <ul className="absolute overflow-hidden flex flex-col bottom-0 left-0 py-4 space-y-1 w-full border-t bg-white dark:bg-black-200 dark:border-black-300">
+            <ul className="absolute bottom-0 left-0 flex flex-col w-full py-4 space-y-1 overflow-hidden bg-white border-t dark:bg-black-200 dark:border-black-300">
               <li> {/* 1st bottom item */}
-                <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
-                  <span className="inline-flex justify-center items-center ml-4">
+                <a href="#" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                  <span className="inline-flex items-center justify-center ml-4">
                     <svg
                       aria-hidden="true"
                       focusable="false"
@@ -241,8 +241,8 @@ export const SideNav = ({
               </li>
 
               <li> {/* 2nd bottom item */}
-                <a href="#" className="relative flex flex-row h-11 pr-6 items-center border-l-4 border-transparent hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
-                  <span className="inline-flex justify-center items-center ml-4">
+                <a href="#" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-black-300">
+                  <span className="inline-flex items-center justify-center ml-4">
                     {/* <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-in-alt" class="svg-inline--fa fa-sign-in-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z"></path></svg> */}
 
                     <svg
@@ -274,7 +274,7 @@ export const SideNav = ({
               setSideCollapse(false);
               setSideRotate(false)
             }}
-            className="z-10 w-full h-screen bg-transparent fixed"
+            className="fixed z-10 w-full h-screen bg-transparent"
           />
         </>
       )}

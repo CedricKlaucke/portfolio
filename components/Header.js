@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useCycle } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import useDarkMode from "../pages/hooks/useDarkMode";
 
 export const Header = ({
@@ -7,37 +7,36 @@ export const Header = ({
   setToggleNav,
   toggleNav
 }) => {
-  
-  {/* tailwind darkmode */ }
+  {/* tailwind darkmode */}
   const [colorTheme, setTheme] = useDarkMode();
 
   return (
-    <header className="fixed flex flex-row w-full h-16 top-0 left-0 items-center justify-between border-b shadow-md z-30 text-black-0 bg-white dark:text-white dark:bg-black-200 dark:border-black-300">
+    <header className="fixed top-0 left-0 z-30 flex flex-row items-center justify-between w-full h-16 bg-white border-b shadow-md text-black-0 dark:text-white dark:bg-black-200 dark:border-black-300">
       {/* menu icon */}
       <a
         onClick={function () {
-          setToggleNav(!toggleNav);
           setSideCollapse(false);
           setSideRotate(false);
+          setToggleNav(!toggleNav);
         }}
-        className="flex flex-col justify-between hover:cursor-pointer ml-5 h-6 w-6"
+        className="flex flex-col justify-between w-6 h-6 ml-5 hover:cursor-pointer"
       >
         <motion.div
-          className="h-1 w-full rounded-full bg-black-0 dark:bg-white"
+          className="w-full h-1 rounded-full bg-black-0 dark:bg-white"
           animate={{
             rotate: toggleNav ? 45 : 0,
             y: toggleNav ? 10 : 0,
           }}
         />
         <motion.div
-          className="h-1 w-full rounded-full bg-black-0 dark:bg-white"
+          className="w-full h-1 rounded-full bg-black-0 dark:bg-white"
           animate={{
             opacity: toggleNav ? 0 : 1,
             x: toggleNav ? -50 : 0,
           }}
         />
         <motion.div
-          className="h-1 w-full rounded-full bg-black-0 dark:bg-white"
+          className="w-full h-1 rounded-full bg-black-0 dark:bg-white"
           animate={{
             rotate: toggleNav ? -45 : 0,
             y: toggleNav ? -10 : 0,
@@ -51,7 +50,7 @@ export const Header = ({
       </a>
 
       {/* darkmode icon/button */}
-      <div className="flex flex-col h-6 w-6 mr-5">
+      <div className="flex flex-col w-6 h-6 mr-5">
         <AnimatePresence>
           {colorTheme === "light" ? (
             <motion.svg
@@ -67,7 +66,7 @@ export const Header = ({
               focusable="false"
               data-prefix="fas"
               data-icon="sun"
-              className="fixed h-6 w-6 hover:cursor-pointer"
+              className="fixed w-6 h-6 hover:cursor-pointer"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -91,7 +90,7 @@ export const Header = ({
               focusable="false"
               data-prefix="fas"
               data-icon="moon"
-              className="fixed h-6 w-6 hover:cursor-pointer"
+              className="fixed w-6 h-6 hover:cursor-pointer"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"

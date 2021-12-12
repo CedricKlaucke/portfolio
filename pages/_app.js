@@ -1,17 +1,14 @@
 import 'tailwindcss/tailwind.css'
 import { useState } from 'react';
-import { useCycle } from 'framer-motion';
-import { Header } from './../components/Header';
-import { SideNav } from './../components/SideNav';
+import { Header } from '../components/Header';
+import { SideNav } from '../components/SideNav';
 import { Footer } from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
-  {/* sidebar nav toggle */ }
-  const [toggleNav, setToggleNav] = useCycle(false, true);
-
-  {/* sidebar collapse */ }
+  {/* sidebar */ }
   const [sideCollapse, setSideCollapse] = useState(false);
   const [sideRotate, setSideRotate] = useState();
+  const [toggleNav, setToggleNav] = useState(false);
 
   return <>
     <Header
