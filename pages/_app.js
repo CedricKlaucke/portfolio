@@ -7,23 +7,19 @@ import { Footer } from '../components/Footer';
 function MyApp({ Component, pageProps }) {
   {/* sidebar */ }
   const [sideCollapse, setSideCollapse] = useState(false);
-  const [sideRotate, setSideRotate] = useState();
   const [toggleNav, setToggleNav] = useState(false);
 
   return <>
     <Header
       setSideCollapse={setSideCollapse}
-      setSideRotate={setSideRotate}
       setToggleNav={setToggleNav}
       toggleNav={toggleNav}
     />
 
     <SideNav
       setSideCollapse={setSideCollapse}
-      setSideRotate={setSideRotate}
       setToggleNav={setToggleNav}
       sideCollapse={sideCollapse}
-      sideRotate={sideRotate}
       toggleNav={toggleNav}
     />
 

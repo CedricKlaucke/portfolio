@@ -3,7 +3,6 @@ import useDarkMode from "../pages/hooks/useDarkMode";
 
 export const Header = ({
   setSideCollapse,
-  setSideRotate,
   setToggleNav,
   toggleNav
 }) => {
@@ -11,32 +10,31 @@ export const Header = ({
   const [colorTheme, setTheme] = useDarkMode();
 
   return (
-    <header className="fixed top-0 left-0 z-30 flex flex-row items-center justify-between w-full h-16 bg-white border-b shadow-md text-black-0 dark:text-white dark:bg-black-200 dark:border-black-300">
+    <header className="fixed top-0 left-0 z-30 flex flex-row items-center justify-between w-full h-16 text-black bg-white border-b shadow-md dark:text-white dark:bg-neutral-850 dark:border-neutral-800">
       {/* menu icon */}
       <a
         onClick={function () {
           setSideCollapse(false);
-          setSideRotate(false);
           setToggleNav(!toggleNav);
         }}
         className="flex flex-col justify-between w-6 h-6 ml-5 hover:cursor-pointer"
       >
         <motion.div
-          className="w-full h-1 rounded-full bg-black-0 dark:bg-white"
+          className="w-full h-1 bg-black rounded-full dark:bg-white"
           animate={{
             rotate: toggleNav ? 45 : 0,
             y: toggleNav ? 10 : 0,
           }}
         />
         <motion.div
-          className="w-full h-1 rounded-full bg-black-0 dark:bg-white"
+          className="w-full h-1 bg-black rounded-full dark:bg-white"
           animate={{
             opacity: toggleNav ? 0 : 1,
             x: toggleNav ? -50 : 0,
           }}
         />
         <motion.div
-          className="w-full h-1 rounded-full bg-black-0 dark:bg-white"
+          className="w-full h-1 bg-black rounded-full dark:bg-white"
           animate={{
             rotate: toggleNav ? -45 : 0,
             y: toggleNav ? -10 : 0,

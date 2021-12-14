@@ -9,7 +9,7 @@ export default function Home() {
   const isPhone = useMediaQuery("(max-width: 768px)");
 
   return (
-    <div className="flex flex-col items-center min-h-screen py-2 -mb-10 bg-white text-black-0 dark:text-white dark:bg-black-100">
+    <div className="flex flex-col items-center min-h-screen py-2 -mb-10 text-black bg-white dark:text-white dark:bg-neutral-900">
       <Head>
         <title>Cedric Klaucke</title>
         <link rel="icon" href="/favicon.ico" />
@@ -20,9 +20,9 @@ export default function Home() {
       <main className="flex flex-col items-center w-full h-full max-w-screen-xl mt-20 mb-10 space-y-6">
         {/* 1st container */}
         {isDesktop && (
-          <div className="flex flex-col w-full overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-black-100 dark:border-black-300">
-            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-r-2 md:border-b-0 dark:border-black-300">
-              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-black-300">
+          <div className="flex w-full overflow-hidden border-2 h-96 rounded-2xl dark:bg-neutral-900 dark:border-neutral-800">
+            <div className="flex flex-col w-full border-r-2 dark:border-neutral-800">
+              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-neutral-800">
                 <span className="text-xl font-bold">Gamen</span>
               </div>
               <div className="flex flex-col items-center justify-center h-full p-10">
@@ -48,15 +48,13 @@ export default function Home() {
         )}
 
         {isTablet && !isDesktop && (
-          <div>
-            je moeder
-          </div>
+          <div/>
         )}
 
         {isPhone && (
-          <div className="flex flex-col w-11/12 overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-black-100 dark:border-black-300">
-            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-r-2 md:border-b-0 dark:border-black-300">
-              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-black-300">
+          <div className="flex flex-col w-11/12 overflow-hidden border-2 rounded-2xl dark:bg-neutral-900 dark:border-neutral-800">
+            <div className="flex flex-col w-full border-b-2 dark:border-neutral-800">
+              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-neutral-800">
                 <span className="text-xl font-bold">Gamen</span>
               </div>
               <div className="flex flex-col items-center justify-center h-full p-2">
@@ -85,7 +83,7 @@ export default function Home() {
 
         {/* 2nd container */}
         {isDesktop && (
-          <div className="flex flex-col w-full overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-black-100 dark:border-black-300">
+          <div className="flex flex-col w-full overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-neutral-900 dark:border-neutral-800">
             <div className="relative flex image">
               <Image
                 src="/img/festival.jpg"
@@ -98,8 +96,8 @@ export default function Home() {
                 height={384}
               />
             </div>
-            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-l-2 md:border-b-0 dark:border-black-300">
-              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-black-300">
+            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-l-2 md:border-b-0 dark:border-neutral-800">
+              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-neutral-800">
                 <span className="text-xl font-bold">Festivals</span>
               </div>
               <div className="flex flex-col items-center justify-center h-full">
@@ -113,15 +111,13 @@ export default function Home() {
         )}
 
         {isTablet && !isDesktop && (
-          <div>
-            je moeder
-          </div>
+          <div/>
         )}
 
         {isPhone && (
-          <div className="flex flex-col w-11/12 overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-black-100 dark:border-black-300">
-            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-r-2 md:border-b-0 dark:border-black-300">
-              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-black-300">
+          <div className="flex flex-col w-11/12 overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-neutral-900 dark:border-neutral-800">
+            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-r-2 md:border-b-0 dark:border-neutral-800">
+              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-neutral-800">
                 <span className="text-xl font-bold">Festivals</span>
               </div>
               <div className="flex flex-col items-center justify-center h-full m-2">
@@ -150,9 +146,9 @@ export default function Home() {
 
         {/* 3rd container */}
         {isDesktop && (
-          <div className="flex flex-col w-full overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-black-100 dark:border-black-300">
-            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-r-2 md:border-b-0 dark:border-black-300">
-              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-black-300">
+          <div className="flex flex-col w-full overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-neutral-900 dark:border-neutral-800">
+            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-r-2 md:border-b-0 dark:border-neutral-800">
+              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-neutral-800">
                 <span className="text-xl font-bold">Boulderen</span>
               </div>
               <div className="flex flex-col items-center justify-center h-full">
@@ -180,14 +176,14 @@ export default function Home() {
 
         {isTablet && !isDesktop && (
           <div>
-            je moeder
+            Tablet layout word nog aan gewerkt
           </div>
         )}
 
         {isPhone && (
-          <div className="flex flex-col w-11/12 overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-black-100 dark:border-black-300">
-            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-r-2 md:border-b-0 dark:border-black-300">
-              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-black-300">
+          <div className="flex flex-col w-11/12 overflow-hidden border-2 md:flex-row md:h-96 rounded-2xl dark:bg-neutral-900 dark:border-neutral-800">
+            <div className="flex flex-col w-full border-b-2 border-r-0 md:border-r-2 md:border-b-0 dark:border-neutral-800">
+              <div className="flex items-center justify-center w-full h-16 border-b-2 dark:border-neutral-800">
                 <span className="text-xl font-bold">Boulderen</span>
               </div>
               <div className="flex flex-col items-center justify-center h-full m-2">
