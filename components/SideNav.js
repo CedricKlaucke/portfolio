@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { container, item } from "./../helpers/customStyling";
 
 export const SideNav = ({
@@ -22,26 +23,28 @@ export const SideNav = ({
             {/* top list */}
             <ul className="flex flex-col py-4 mt-16 space-y-1">
               <li> {/* 1st top item */}
-                <a href="/" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800">
-                  <span className="inline-flex items-center justify-center ml-4">
-                    <svg
-                      aria-hidden="true"
-                      focusable="false"
-                      data-prefix="fas"
-                      data-icon="home"
-                      className="w-5 h-5"
-                      role="img"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 576 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"
-                      />
-                    </svg>
-                  </span>
-                  <span className="ml-2 text-sm tracking-wide truncate">Home</span>
-                </a>
+                <Link href="/">
+                  <a className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800">
+                    <span className="inline-flex items-center justify-center ml-4">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="home"
+                        className="w-5 h-5"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"
+                        />
+                      </svg>
+                    </span>
+                    <span className="ml-2 text-sm tracking-wide truncate">Home</span>
+                  </a>
+                </Link>
               </li>
 
               <li> {/* 2nd top item */}
@@ -105,7 +108,7 @@ export const SideNav = ({
                       />
                     </div>
                   </span>
-                  <span className="ml-2 text-sm tracking-wide truncate">School</span>
+                  <span className="ml-2 text-sm tracking-wide truncate">Projecten</span>
                 </a>
               </li>
 
@@ -119,25 +122,27 @@ export const SideNav = ({
                     exit="hidden"
                   >
                     <motion.li variants={item}> {/* 1st collapse item */}
-                      <a href="/modules" className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800">
-                        <span className="inline-flex items-center justify-center ml-6">
-                          <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
-                            />
-                          </svg>
-                        </span>
-                        <span className="ml-2 text-sm tracking-wide truncate">Modules</span>
-                      </a>
+                      <Link href="/school">
+                        <a className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800">
+                          <span className="inline-flex items-center justify-center ml-6">
+                            <svg
+                              className="w-5 h-5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+                              />
+                            </svg>
+                          </span>
+                          <span className="ml-2 text-sm tracking-wide truncate">School</span>
+                        </a>
+                      </Link>
                     </motion.li>
 
                     <motion.li variants={item}> {/* 2nd collapse item */}
@@ -158,7 +163,7 @@ export const SideNav = ({
                             />
                           </svg>
                         </span>
-                        <span className="ml-2 text-sm tracking-wide truncate">die ding</span>
+                        <span className="ml-2 text-sm tracking-wide truncate">Modules</span>
                       </a>
                     </motion.li>
 
@@ -180,7 +185,7 @@ export const SideNav = ({
                             />
                           </svg>
                         </span>
-                        <span className="ml-2 text-sm tracking-wide truncate">die ding</span>
+                        <span className="ml-2 text-sm tracking-wide truncate">Persoonlijk</span>
                       </a>
                     </motion.li>
                   </motion.ul>

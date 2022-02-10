@@ -23,7 +23,9 @@ function MyApp({ Component, pageProps }) {
       toggleNav={toggleNav}
     />
 
-    <Component {...pageProps} />
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <Component {...pageProps} />
+    </AnimatePresence>
 
     <Footer />
   </>
@@ -32,3 +34,4 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 // pages/_app.js
 import '../styles/globals.css'
+import { AnimatePresence } from 'framer-motion';

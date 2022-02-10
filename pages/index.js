@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import useMediaQuery from "./hooks/useMediaQuery";
 
 export default function Home() {
@@ -17,7 +18,13 @@ export default function Home() {
       </Head>
 
       {/* main content */}
-      <main className="flex flex-col items-center w-full h-full max-w-screen-xl mt-20 mb-10 space-y-6">
+      <motion.main
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        transition={{duration: 1}}
+        className="flex flex-col items-center w-full h-full max-w-screen-xl mt-20 mb-10 space-y-6"
+      >
         {/* 1st container */}
         {isDesktop && (
           <div className="flex w-full overflow-hidden border-2 h-96 rounded-2xl dark:bg-neutral-900 dark:border-neutral-800">
@@ -210,7 +217,7 @@ export default function Home() {
             </div>
           </div>
         )}
-      </main>
+      </motion.main>
     </div>
   )
 }
