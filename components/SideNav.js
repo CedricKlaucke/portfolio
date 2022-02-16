@@ -24,7 +24,13 @@ export const SideNav = ({
             <ul className="flex flex-col py-4 mt-16 space-y-1">
               <li> {/* 1st top item */}
                 <Link href="/">
-                  <a className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800">
+                  <a
+                    className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800"
+                    onClick={function () {
+                      setToggleNav(!toggleNav);
+                      setSideCollapse(false);
+                    }}
+                  >
                     <span className="inline-flex items-center justify-center ml-4">
                       <svg
                         aria-hidden="true"
@@ -123,7 +129,13 @@ export const SideNav = ({
                   >
                     <motion.li variants={item}> {/* 1st collapse item */}
                       <Link href="/school">
-                        <a className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800">
+                        <a
+                          className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800"
+                          onClick={function () {
+                            setToggleNav(!toggleNav);
+                            setSideCollapse(false);
+                          }}
+                        >
                           <span className="inline-flex items-center justify-center ml-6">
                             <svg
                               className="w-5 h-5"
