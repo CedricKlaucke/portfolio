@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import useMediaQuery from "./hooks/useMediaQuery";
-import { Container } from "../components/index/container";
+import { Container } from "../components/index/Container";
 
 export default function Home() {
   return (
