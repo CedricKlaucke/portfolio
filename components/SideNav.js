@@ -23,9 +23,10 @@ export const SideNav = ({
             {/* top list */}
             <ul className="flex flex-col py-4 mt-16 space-y-1">
               <li> {/* 1st top item */}
-                <Link href="/">
+                <Link href="/" passHref>
                   <a
                     className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800"
+                    href="#"
                     onClick={function () {
                       setToggleNav(!toggleNav);
                       setSideCollapse(false);
@@ -128,9 +129,10 @@ export const SideNav = ({
                     exit="hidden"
                   >
                     <motion.li variants={item}> {/* 1st collapse item */}
-                      <Link href="/school">
+                      <Link href="/school" passHref>
                         <a
                           className="relative flex flex-row items-center pr-6 border-l-4 border-transparent h-11 hover:border-purple-700 hover:bg-gray-50 focus:outline-none dark:hover:bg-neutral-800"
+                          href="#"
                           onClick={function () {
                             setToggleNav(!toggleNav);
                             setSideCollapse(false);

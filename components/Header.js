@@ -1,12 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import useDarkMode from "../pages/hooks/useDarkMode";
+import Link from "next/link";
 
 export const Header = ({
   setSideCollapse,
   setToggleNav,
   toggleNav
 }) => {
-  {/* tailwind darkmode */}
+  {/* tailwind darkmode */ }
   const [colorTheme, setTheme] = useDarkMode();
 
   return (
@@ -43,9 +44,11 @@ export const Header = ({
       </a>
 
       {/* center text */}
-      <a href="/" className="flex items-center">
-        <span className="text-xl tracking-wide">Cedric Klaucke</span>
-      </a>
+      <Link href="/" passHref>
+        <a href="#" className="flex items-center">
+          <span className="text-xl tracking-wide">Cedric Klaucke</span>
+        </a>
+      </Link>
 
       {/* darkmode icon/button */}
       <div className="flex flex-col w-6 h-6 mr-5">

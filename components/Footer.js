@@ -1,4 +1,4 @@
-export const Footer = ({}) => {
+export const Footer = () => {
 
   return (
     <footer className="flex items-center justify-center w-full h-10 bg-white border-t dark:bg-neutral-850 dark:border-neutral-800">

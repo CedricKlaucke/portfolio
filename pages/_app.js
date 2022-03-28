@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Header } from '../components/Header';
 import { SideNav } from '../components/SideNav';
 import { Footer } from '../components/Footer';
+import { AnimatePresence } from 'framer-motion';
 
 function MyApp({ Component, pageProps }) {
   {/* sidebar */ }
@@ -34,4 +35,3 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 // pages/_app.js
 import '../styles/globals.css'
-import { AnimatePresence } from 'framer-motion';
