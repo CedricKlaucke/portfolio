@@ -7,7 +7,7 @@ export const Header = ({
   setToggleNav,
   toggleNav
 }) => {
-  {/* tailwind darkmode */ }
+  {/* tailwind darkmode */}
   const [colorTheme, setTheme] = useDarkMode();
 
   return (
