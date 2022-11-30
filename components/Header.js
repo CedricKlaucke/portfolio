@@ -1,51 +1,49 @@
 import { AnimatePresence, motion } from "framer-motion";
-import useDarkMode from "../pages/hooks/useDarkMode";
+import useDarkMode from "../hooks/useDarkMode";
 import Link from "next/link";
+import { HeaderCloseBtn } from "./Header.CloseBtn";
 
 export const Header = ({
-  setSideCollapse,
   setToggleNav,
   toggleNav
 }) => {
   {/* tailwind darkmode */}
-  const [colorTheme, setTheme] = useDarkMode();
+  const [colorTheme, setTheme] = useDarkMode()
+
+  const CloseBtn = [
+    {
+      rotate: toggleNav ? 45 : 0,
+      y: toggleNav ? 10 : 0,
+    },
+    {
+      opacity: toggleNav ? 0 : 1,
+      x: toggleNav ? -50 : 0,
+    },
+    {
+      rotate: toggleNav ? -45 : 0,
+      y: toggleNav ? -10 : 0,
+    },
+  ]
 
   return (
     <header className="fixed top-0 left-0 z-30 flex flex-row items-center justify-between w-full h-16 text-black bg-white border-b shadow-md dark:text-white dark:bg-neutral-850 dark:border-neutral-800">
       {/* menu icon */}
       <a
-        onClick={function () {
-          setSideCollapse(false);
-          setToggleNav(!toggleNav);
-        }}
+        onClick={() => {setToggleNav(!toggleNav)}}
         className="flex flex-col justify-between w-6 h-6 ml-5 hover:cursor-pointer"
       >
-        <motion.div
-          className="w-full h-1 bg-black rounded-full dark:bg-white"
-          animate={{
-            rotate: toggleNav ? 45 : 0,
-            y: toggleNav ? 10 : 0,
-          }}
-        />
-        <motion.div
-          className="w-full h-1 bg-black rounded-full dark:bg-white"
-          animate={{
-            opacity: toggleNav ? 0 : 1,
-            x: toggleNav ? -50 : 0,
-          }}
-        />
-        <motion.div
-          className="w-full h-1 bg-black rounded-full dark:bg-white"
-          animate={{
-            rotate: toggleNav ? -45 : 0,
-            y: toggleNav ? -10 : 0,
-          }}
-        />
+        {CloseBtn.map((item, index) => {
+          return (
+            <HeaderCloseBtn key={`close.button ${index}`}
+              animate={item}
+            />
+          )
+        })}
       </a>
 
       {/* center text */}
       <Link href="/" passHref>
-        <a href="#" className="flex items-center">
+        <a className="flex items-center">
           <span className="text-xl tracking-wide">Cedric Klaucke</span>
         </a>
       </Link>
