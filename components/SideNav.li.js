@@ -9,7 +9,7 @@ export const SideNavLi = (props) => {
           onClick={() => { props.setToggleNav(!props.toggleNav) }}
         >
           <span className="inline-flex items-center justify-center ml-4">{props.svg}</span>
-          <span className="ml-2 text-sm tracking-wide truncate">{props.text}</span>
+          <span className="ml-2 text-sm tracking-wide truncate">{props.text || "text"}</span>
         </a>
       </Link>
     </li>

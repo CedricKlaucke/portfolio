@@ -7,19 +7,17 @@ export const Header = ({
   setToggleNav,
   toggleNav
 }) => {
-  {/* tailwind darkmode */}
+  {/* tailwind darkmode */ }
   const [colorTheme, setTheme] = useDarkMode()
 
   const CloseBtn = [
     {
       rotate: toggleNav ? 45 : 0,
       y: toggleNav ? 10 : 0,
-    },
-    {
+    }, {
       opacity: toggleNav ? 0 : 1,
       x: toggleNav ? -50 : 0,
-    },
-    {
+    }, {
       rotate: toggleNav ? -45 : 0,
       y: toggleNav ? -10 : 0,
     },
@@ -29,7 +27,7 @@ export const Header = ({
     <header className="fixed top-0 left-0 z-30 flex flex-row items-center justify-between w-full h-16 text-black bg-white border-b shadow-md dark:text-white dark:bg-neutral-850 dark:border-neutral-800">
       {/* menu icon */}
       <a
-        onClick={() => {setToggleNav(!toggleNav)}}
+        onClick={() => { setToggleNav(!toggleNav) }}
         className="flex flex-col justify-between w-6 h-6 ml-5 hover:cursor-pointer"
       >
         {CloseBtn.map((item, index) => {
