@@ -17,7 +17,7 @@ export default function Home() {
         transition={{duration: 1}}
         className="flex flex-col items-center w-full h-full mt-16 mb-10 space-y-4 "
       >
-        <iframe src="./Cedric_CV.pdf" style={{position: "fixed", top: "0", left: "0", bottom: "0", right: "0", width: "100%", height: "100%", border: "none", margin: "0", padding: "0", overflow: "hidden"}}>
+        <iframe src="/Cedric_CV.pdf" type="application/pdf" style={{position: "fixed", top: "0", left: "0", bottom: "0", right: "0", width: "100%", height: "100%", border: "none", margin: "0", padding: "0", overflow: "hidden"}}>
           Your browser doesn't support iframes
         </iframe>
       </motion.main>

@@ -22,7 +22,7 @@ export default function Home() {
       image: "/img/boulder.png",
     }, {
       title: "Airsoft",
-      text: "",
+      text: "Airsoft is een schietsport die op verschillende manieren gespeeld kan worden. Door het afschieten van biologisch afbreekbare kleine balletjes (BB’s) probeer je doelwitten te raken en/of tegenstanders uit te schakelen.",
       image: "/img/airsoft.jpg",
     },
   ]
