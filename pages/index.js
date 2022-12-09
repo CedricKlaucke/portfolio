@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { Container } from "../components/index/Container";
+import { Container } from "/components/index/Container";
 
 export default function Home() {
   const content = [

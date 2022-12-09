@@ -1,8 +1,8 @@
 import Image from "next/image";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "/hooks/useMediaQuery";
 
 export const Container = (props) => {
-  {/* mediaquery */ }
+  {/* mediaquery */}
   const isDesktop = useMediaQuery("(min-width: 1024px)")
   const isTablet  = useMediaQuery("(min-width: 768px)")
   const isPhone   = useMediaQuery("(max-width: 768px)")

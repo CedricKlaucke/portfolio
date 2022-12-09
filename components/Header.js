@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import useDarkMode from "../hooks/useDarkMode";
+import useDarkMode from "/hooks/useDarkMode";
 import Link from "next/link";
 import { HeaderCloseBtn } from "./Header.CloseBtn";
 
